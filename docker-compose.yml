@@ -1,5 +1,4 @@
-version: '3.8'
-
+#version: '3.8'
 services:
   web:
     build: ./services/web
@@ -7,7 +6,7 @@ services:
     volumes:
       - ./services/web/:/usr/src/app/
     ports:
-      - 2329:5000
+      - 4239:5000
     env_file:
       - ./.env.dev
     depends_on:
@@ -22,4 +21,4 @@ services:
       - POSTGRES_DB=hello_flask_dev
 
 volumes:
-   postgres_data:
+  postgres_data:
