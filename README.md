@@ -64,18 +64,5 @@ $ curl -F "file=@example.png" http://localhost:4239/upload
 View uploaded media
 
 http://localhost:4239/media/example.png
-
-## Architecture
-
-Client
-   ↓
-Nginx (reverse proxy)
-   ↓
-Gunicorn
-   ↓
-Flask application
-   ↓
-PostgreSQL
-
-## Demo
+## Web Demo
 ![Demo](demo.gif)
