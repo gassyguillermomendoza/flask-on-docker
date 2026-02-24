@@ -43,8 +43,7 @@ This will start the Flask application, PostgreSQL database, and Nginx server.
 
 ### Access and features
 
-To access the application, make sure port forwarding is enabled in your server, and in a browser navigate to http://localhost:4239/
-The following API endpoints are available:
+To access the application, make sure port forwarding is enabled in your server, and in a browser navigate to http://localhost:4239/. The following API endpoints are available:
 
 * `/`: Returns a JSON response with a "hello" message from the 'static' folder.
 * `/media/<filename>`: Serves a media file from the `media` folder.
@@ -61,8 +60,7 @@ Upload a file
 ```
 $ curl -F "file=@example.png" http://localhost:4239/upload
 ```
-View uploaded media
+To View uploaded media, navigate to: http://localhost:4239/media/example.png
 
-http://localhost:4239/media/example.png
 ## Web Demo
 ![Demo](demo.gif)
