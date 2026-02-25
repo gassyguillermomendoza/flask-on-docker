@@ -51,22 +51,10 @@ $ docker-compose -f docker-compose.prod.yml exec web python manage.py create_db
 
 Then in a browser navigate to http://localhost:4239/. The following API endpoints are available:
 
-* `/`: Returns a JSON response with a "hello" message from the 'static' folder.
+* `/`: Serves a JSON response with a fun greeting message from the 'static' folder.
+* `/upload`: Allows the user to upload a file to the `media` folder.
 * `/media/<filename>`: Serves a media file from the `media` folder.
-* `/upload`: Uploads a file to the `media` folder.
 
-
-### Example API usage
-
-Get hello message
-```
-$ curl http://localhost:4239
-```
-Upload a file
-```
-$ curl -F "file=@example.png" http://localhost:4239/upload
-```
-To View uploaded media, navigate to: http://localhost:4239/media/example.png
 
 ## Web Demo
 ![Demo](demo.gif)
