@@ -25,7 +25,7 @@ To get started, clone the repository and navigate to the project directory.
 To start the development environment, run the following command:
 
 ```
-$ docker compose up
+$ docker compose up --build
 ```
 
 This will start the Flask application and PostgreSQL database.
@@ -35,7 +35,7 @@ This will start the Flask application and PostgreSQL database.
 To start the production environment, run the following command:
 
 ```
-$ docker compose -f docker-compose.prod.yml up
+$ docker compose -f docker-compose.prod.yml up --build
 ```
 
 This will start the Flask application, PostgreSQL database, and Nginx server.
@@ -43,7 +43,13 @@ This will start the Flask application, PostgreSQL database, and Nginx server.
 
 ### Access and features
 
-To access the application, make sure port forwarding is enabled in your server, and in a browser navigate to http://localhost:4239/. The following API endpoints are available:
+To access the application, make sure port forwarding is enabled in your server, and run this line:
+
+```
+$ docker-compose -f docker-compose.prod.yml exec web python manage.py create_db
+```
+
+Then in a browser navigate to http://localhost:4239/. The following API endpoints are available:
 
 * `/`: Returns a JSON response with a "hello" message from the 'static' folder.
 * `/media/<filename>`: Serves a media file from the `media` folder.
