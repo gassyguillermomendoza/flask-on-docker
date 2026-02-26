@@ -43,7 +43,7 @@ This will start the Flask application, PostgreSQL database, and Nginx server.
 
 ### Access and features
 
-To access the application in the production environment, first create a 'env.prod.db' file containing your credential as follows: 
+To access the application in the production environment, first create a 'env.prod.db' file containing your credentials as follows: 
 
 ```
 $ cat > .env.prod.db << EOF
@@ -55,10 +55,10 @@ EOF
 Make sure port forwarding is enabled in your server, and run this line:
 
 ```
-$ docker-compose -f docker-compose.prod.yml exec web python manage.py create_db
+$ docker compose -f docker-compose.prod.yml exec web python manage.py create_db
 ```
 Then in a browser navigate to http://localhost:4239/ (or replace that number with whichever port you are forwarding to). 
->>Note: If you  want to initialize the development environment instead, replace `.prod` in the filename from the line above.  
+>Note: If you  want to initialize the development environment instead, remove `.prod` in the filename from the line above.  
 
 The following API endpoints are available:
 * `/`: Serves a JSON response with a fun greeting message from the 'static' folder.
