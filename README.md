@@ -32,6 +32,16 @@ This will start the Flask application and PostgreSQL database.
 
 ### Production Environment
 
+To deploy the production environment, first create a '.env.prod.db' file containing your credentials as follows: 
+
+```
+$ cat > .env.prod.db << EOF
+POSTGRES_USER=change_me 
+POSTGRES_PASSWORD=change_this
+POSTGRES_DB=change_me_too
+EOF
+```
+
 To start the production environment, run the following command:
 
 ```
@@ -43,15 +53,6 @@ This will start the Flask application, PostgreSQL database, and Nginx server.
 
 ### Access and features
 
-To access the application in the production environment, first create a 'env.prod.db' file containing your credentials as follows: 
-
-```
-$ cat > .env.prod.db << EOF
-POSTGRES_USER=change_me 
-POSTGRES_PASSWORD=change_this
-POSTGRES_DB=change_me_too
-EOF
-```
 Make sure port forwarding is enabled in your server, and run this line:
 
 ```
